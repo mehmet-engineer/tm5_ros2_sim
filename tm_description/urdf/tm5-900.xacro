@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="$(arg name)">
+
+  <!-- Enable setting arguments from the launch file -->
+  <xacro:arg name="name" default="tm5"/>
+
+  <!-- include tm5 macro -->
+  <xacro:include filename="$(find tm_description)/urdf/tm_urdf.xacro" />
+  <xacro:tm5_joints_links />
+
+  <!-- include tm5 ros2_control description -->
+  <xacro:include filename="$(find tm_description)/urdf/tm_ros2_control.xacro" />
+  <xacro:tm5_ros2_control />
+
+</robot>
+
+
